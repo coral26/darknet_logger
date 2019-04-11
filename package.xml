@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>darknet_logger</name>
+  <version>0.0.0</version>
+  <description>The darknet_logger package</description>
+
+  <maintainer email="cmoreno@ccom.unh.edu">Coral Moreno</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>rosbag</depend>
+  <depend>darknet_ros_msgs</depend>
+  
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>
+
