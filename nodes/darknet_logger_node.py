@@ -11,14 +11,14 @@ def callback(data):
 	bag.write('/udp/darknet_ros/bounding_boxes',data)
 
 def darknet_logger():
-	rospy.init_node('darknet_ros_logger', anonymous=False)
+	rospy.init_node('darknet_logger', anonymous=False)
 	global bag
 
 	timestamp = datetime.datetime.utcfromtimestamp(rospy.Time.now().to_time()).isoformat()
 	bag = rosbag.Bag('nodes/darknet_ros_'+('-'.join(timestamp.split(':')))+'.bag', 'w', rosbag.Compression.BZ2)
 
-	while not rospy.is_shutdown():
-		rospy.Subscriber('/udp/darknet_ros/bounding_boxes',BoundingBoxes,callback)
+	rospy.Subscriber('/udp/darknet_ros/bounding_boxes',BoundingBoxes,callback)
+	rospy.spin()
 
 	bag.close()
 
