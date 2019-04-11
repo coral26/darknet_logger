@@ -17,7 +17,7 @@ def darknet_logger():
 	timestamp = datetime.datetime.utcfromtimestamp(rospy.Time.now().to_time()).isoformat()
 	bag = rosbag.Bag('nodes/darknet_ros_'+('-'.join(timestamp.split(':')))+'.bag', 'w', rosbag.Compression.BZ2)
 
-	rospy.Subscriber('/udp/darknet_ros/bounding_boxes',BoundingBoxes,callback)
+	rospy.Subscriber('/darknet_ros/bounding_boxes',BoundingBoxes,callback)
 	rospy.spin()
 
 	bag.close()
