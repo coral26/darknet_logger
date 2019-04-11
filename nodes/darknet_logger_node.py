@@ -8,7 +8,7 @@ from darknet_ros_msgs.msg import BoundingBoxes
 def callback(data):
 	#print data
 	#print
-	bag.write('/udp/darknet_ros/bounding_boxes',data)
+	bag.write('/darknet_ros/bounding_boxes',data)
 
 def darknet_logger():
 	rospy.init_node('darknet_logger', anonymous=False)
