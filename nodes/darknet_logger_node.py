@@ -15,7 +15,8 @@ def darknet_logger():
 	global bag
 
 	timestamp = datetime.datetime.utcfromtimestamp(rospy.Time.now().to_time()).isoformat()
-	bag = rosbag.Bag('nodes/darknet_ros_'+('-'.join(timestamp.split(':')))+'.bag', 'w')
+	#bag = rosbag.Bag('nodes/darknet_ros_'+('-'.join(timestamp.split(':')))+'.bag', 'w')
+    bag = rosbag.Bag('/media/exfat/jetson2/nodes/darknet_ros_'+('-'.join(timestamp.split(':')))+'.bag', 'w')
 
 	rospy.Subscriber('/darknet_ros/bounding_boxes',BoundingBoxes,callback)
 	rospy.spin()
